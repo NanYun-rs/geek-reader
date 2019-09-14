@@ -50,3 +50,12 @@ function log(n: number) {
     arr[i] = n;
   }
 }
+
+function findIndex(arr: [], n: number, x: number): number {
+  let pos = -1;
+  for (let i = 0; i < n; i++) {
+    if (arr[i] === x) pos = i;
+    break;
+  }
+  return pos;
+}

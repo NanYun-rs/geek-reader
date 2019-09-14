@@ -19,3 +19,34 @@ function cal(n: number) {
 
 // const ss = sum(5)
 // console.log(ss)
+
+function logn(n: number) {
+  let i = 1;
+  while (i <= n) {
+    i = i * 2;
+  }
+}
+
+function cal(m: number, n: number): number {
+  let sum_1 = 0;
+  let i = 1;
+  for (; i < m; ++i) {
+    sum_1 = sum_1 + i;
+  }
+
+  let sum_2 = 0;
+  let j = 1;
+  for (; j < n; ++j) {
+    sum_2 = sum_2 + j;
+  }
+
+  return sum_1 + sum_2;
+}
+
+function log(n: number) {
+  let i = 0;
+  let arr = [];
+  for (; i < n; i++) {
+    arr[i] = n;
+  }
+}

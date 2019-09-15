@@ -27,7 +27,7 @@ function logn(n: number) {
   }
 }
 
-function cal(m: number, n: number): number {
+function calc(m: number, n: number): number {
   let sum_1 = 0;
   let i = 1;
   for (; i < m; ++i) {

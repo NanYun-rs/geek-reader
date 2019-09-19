@@ -59,3 +59,9 @@ function findIndex(arr: [], n: number, x: number): number {
   }
   return pos;
 }
+
+function func1() {
+  fun2();
+}
+
+function fun2() {}

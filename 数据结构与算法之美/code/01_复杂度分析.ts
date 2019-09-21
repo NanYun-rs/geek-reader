@@ -65,3 +65,28 @@ function func1() {
 }
 
 function fun2() {}
+
+// function f(n: number) {
+//   if (n === 1) return 1;
+//   return f(n - 1) + 1;
+// }
+
+// 递归
+// TODO: 没想明白怎么保存已经计算好的值
+
+let a = 0;
+let saveMap = {};
+function f(n: number) {
+  let calc;
+  if (n === 1) return (a = a + 1);
+  if (n === 2) return (a = a + 2);
+  if (saveMap.hasOwnProperty(`${n}`)) {
+    return saveMap[n];
+  }
+  calc = f(n - 1) + f(n - 2);
+  saveMap[n] = calc;
+  return calc;
+}
+f(8);
+
+console.log(a);

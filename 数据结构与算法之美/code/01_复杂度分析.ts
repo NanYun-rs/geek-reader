@@ -87,6 +87,73 @@ function f(n: number) {
   saveMap[n] = calc;
   return calc;
 }
-f(8);
+// f(8);
 
-console.log(a);
+// console.log(a);
+
+// 二分查找
+
+function bSearch(x: number[], n: number): number {
+  let l = 0,
+    r = x.length - 1,
+    guess;
+
+  while (l <= r) {
+    guess = Math.floor((r + 1) / 2);
+    if (x[guess] === n) return guess;
+    else if (x[guess] > n) r = guess - 1;
+    else l = guess + 1;
+  }
+  return -1;
+}
+
+// let bGroup = [1, 3, 4, 5, 8, 9, 10];
+
+// console.log(bSearch(bGroup, 3));
+
+// 插入排序
+
+function insert_example(x: number[], n: number) {
+  // 循环不变式
+  // p 指向下一个要比较的元素
+  // p + 1 指向空位
+
+  // index
+  let p = x.length - 1;
+
+  while (p >= 0 && x[p] > n) {
+    x[p + 1] = x[p];
+    p--;
+  }
+  // p+1 指向空位 while 结束后 对 p+1 空位进行赋值
+  x[p + 1] = n;
+}
+
+// let insert = [1, 3, 4, 6, 7, 9];
+// insert_example(insert, 8);
+// console.log(insert);
+
+function insert_sort(a: number[]) {
+  for (let i = 1; i < a.length; i++) {
+    insert_helper(a, i, a[i]);
+  }
+}
+
+function insert_helper(a: number[], i: number, x: number) {
+  // 循环不变式
+  // P 指向 下一个要比较的元素
+
+  let p = i - 1;
+
+  while (p >= 0 && a[p] > x) {
+    a[p + 1] = a[p];
+    p--;
+  }
+  a[p + 1] = x;
+}
+
+let insertArray = [3, 1, 4, 5, 2, 9, 7];
+
+insert_sort(insertArray);
+
+console.log(insertArray);

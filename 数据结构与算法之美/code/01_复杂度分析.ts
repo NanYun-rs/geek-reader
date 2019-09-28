@@ -154,6 +154,50 @@ function insert_helper(a: number[], i: number, x: number) {
 
 let insertArray = [3, 1, 4, 5, 2, 9, 7];
 
-insert_sort(insertArray);
+// insert_sort(insertArray);
 
+// console.log(insertArray);
+
+// 插入排除
+
+function helper(a, i, x) {
+  // 循环不变式 p 指向下一个比较元素
+  let p = i - 1;
+  while (a[p] > x) {
+    a[p + 1] = a[p];
+    p--;
+  }
+  a[p + 1] = x;
+}
+
+function testInsert(a) {
+  for (let i = 1; i < a.length; i++) {
+    helper(a, i, a[i]);
+  }
+}
+
+// testInsert(insertArray)
+// console.log(insertArray)
+
+// 冒泡排序
+
+function swap(a: number[], i: number, j: number) {
+  const x = a[i];
+  a[i] = a[j];
+  a[j] = x;
+}
+
+function bubble_sort(a: number[]) {
+  // 外层循环 i
+  // 内层循环 j
+  //
+  for (let i = a.length - 1; i >= 1; i--) {
+    // 内层循环
+    for (let j = 1; j <= i; j++) {
+      a[j - 1] > a[j] && swap(a, j - 1, j);
+    }
+  }
+}
+
+bubble_sort(insertArray);
 console.log(insertArray);

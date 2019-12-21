@@ -74,19 +74,19 @@ function fun2() {}
 // 递归
 // TODO: 没想明白怎么保存已经计算好的值
 
-let a = 0;
-let saveMap = {};
-function f(n: number) {
-  let calc;
-  if (n === 1) return (a = a + 1);
-  if (n === 2) return (a = a + 2);
-  if (saveMap.hasOwnProperty(`${n}`)) {
-    return saveMap[n];
-  }
-  calc = f(n - 1) + f(n - 2);
-  saveMap[n] = calc;
-  return calc;
-}
+// let a = 0;
+// let saveMap = {};
+// function f(n: number) {
+//   let calc;
+//   if (n === 1) return (a = a + 1);
+//   if (n === 2) return (a = a + 2);
+//   if (saveMap.hasOwnProperty(`${n}`)) {
+//     return saveMap[n];
+//   }
+//   calc = f(n - 1) + f(n - 2);
+//   saveMap[n] = calc;
+//   return calc;
+// }
 // f(8);
 
 // console.log(a);
@@ -160,21 +160,21 @@ let insertArray = [3, 1, 4, 5, 2, 9, 7];
 
 // 插入排除
 
-function helper(a, i, x) {
-  // 循环不变式 p 指向下一个比较元素
-  let p = i - 1;
-  while (a[p] > x) {
-    a[p + 1] = a[p];
-    p--;
-  }
-  a[p + 1] = x;
-}
+// function helper(a, i, x) {
+//   // 循环不变式 p 指向下一个比较元素
+//   let p = i - 1;
+//   while (a[p] > x) {
+//     a[p + 1] = a[p];
+//     p--;
+//   }
+//   a[p + 1] = x;
+// }
 
-function testInsert(a) {
-  for (let i = 1; i < a.length; i++) {
-    helper(a, i, a[i]);
-  }
-}
+// function testInsert(a) {
+//   for (let i = 1; i < a.length; i++) {
+//     helper(a, i, a[i]);
+//   }
+// }
 
 // testInsert(insertArray)
 // console.log(insertArray)
